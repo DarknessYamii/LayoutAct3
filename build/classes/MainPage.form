@@ -177,7 +177,10 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="BackgroundUI" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="BackgroundUI" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="26" max="32767" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -192,7 +195,17 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="DatosUI" alignment="0" pref="400" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="DatosUI" min="-2" pref="445" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ScrollTableCT" min="-2" pref="385" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="364" max="-2" attributes="0"/>
+                      <Component id="BackUI" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
@@ -200,19 +213,38 @@
                           <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="468" max="-2" attributes="0"/>
+                          <Component id="TablaFull" min="-2" pref="385" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="DatosUI" min="-2" pref="255" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="49" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="DatosUI" min="-2" pref="255" max="-2" attributes="0"/>
+                          <Component id="ScrollTableCT" min="-2" pref="331" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <Component id="BackUI" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="259" max="32767" attributes="0"/>
                           <Component id="BotonUI" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" rootIndex="2" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
+                          <Component id="TablaFull" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="337" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -227,19 +259,6 @@
               </Properties>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JButton" name="BackUI">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Volver"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackUIMouseClicked"/>
-                  </Events>
-                </Component>
-              </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="DatosUI">
               <Properties>
@@ -299,11 +318,107 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Container class="javax.swing.JPanel" name="TablaFull">
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
+                <Property name="axis" type="int" value="1"/>
+              </Layout>
+            </Container>
+            <Component class="javax.swing.JButton" name="BackUI">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="cc" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Volver"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackUIMouseClicked"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="ScrollTableCT">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="TableCT">
+                  <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="ff" green="ff" red="cc" type="rgb"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="6">
+                        <Column editable="true" title="Nombre" type="java.lang.Object">
+                          <Data value="Andres"/>
+                          <Data value="Javier"/>
+                          <Data value="Marco"/>
+                          <Data value="Javier"/>
+                          <Data value="vfsvs"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="Apellidos" type="java.lang.Object">
+                          <Data value="Ruiz Delgado"/>
+                          <Data value="Campos Cueva"/>
+                          <Data value="Palmero Monroy"/>
+                          <Data value="Esmerado Vela"/>
+                          <Data value="esfs"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="Direccion" type="java.lang.Object">
+                          <Data value="Francisco Garrido N&#xba;89"/>
+                          <Data value="Carmina"/>
+                          <Data value="Alguna parte de Sevilla"/>
+                          <Data value="Bormujos"/>
+                          <Data value="sfessefs"/>
+                          <Data value="null"/>
+                        </Column>
+                        <Column editable="true" title="Email" type="java.lang.Object">
+                          <Data value="andresruizdelgado12@gmail.com"/>
+                          <Data value="yoquese@gmail.com"/>
+                          <Data value="marquitoershulo2001@gmail.com"/>
+                          <Data value="illoooquetemetounapataytedejonuevo@gmail.com"/>
+                          <Data value="sfefs@gmail.com"/>
+                          <Data value="null"/>
+                        </Column>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JDialog" name="ClienteTabla">
+    <Container class="javax.swing.JDialog" name="Empresa">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -313,7 +428,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="BackgroundCT" alignment="0" max="32767" attributes="0"/>
+              <Component id="BackgroundCT" min="-2" max="-2" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -330,119 +445,56 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                              <Component id="TablaFull" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="CompanyName" min="-2" pref="485" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="271" max="-2" attributes="0"/>
-                              <Component id="BackCT" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                              <Component id="Realizamos" min="-2" pref="260" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                              <Component id="Donaciones" min="-2" pref="177" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="ComidasReparto" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="87" max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
+                      <Component id="BackCT" min="-2" pref="165" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                      <Component id="TablaFull" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="BackCT" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="CompanyName" min="-2" pref="137" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="Realizamos" min="-2" pref="64" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="ComidasReparto" min="-2" pref="52" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                              <Component id="Donaciones" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="BackCT" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JPanel" name="TablaFull">
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout">
-                <Property name="axis" type="int" value="1"/>
-              </Layout>
-              <SubComponents>
-                <Container class="javax.swing.JScrollPane" name="ScrollTableCT">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
-
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-                  <SubComponents>
-                    <Component class="javax.swing.JTable" name="TableCT">
-                      <Properties>
-                        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="ff" green="ff" red="cc" type="rgb"/>
-                        </Property>
-                        <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                          <Table columnCount="4" rowCount="6">
-                            <Column editable="true" title="Nombre" type="java.lang.Object">
-                              <Data value="Andres"/>
-                              <Data value="Javier"/>
-                              <Data value="Marco"/>
-                              <Data value="Javier"/>
-                              <Data value="vfsvs"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="true" title="Apellidos" type="java.lang.Object">
-                              <Data value="Ruiz Delgado"/>
-                              <Data value="Campos Cueva"/>
-                              <Data value="Palmero Monroy"/>
-                              <Data value="Esmerado Vela"/>
-                              <Data value="esfs"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="true" title="Direccion" type="java.lang.Object">
-                              <Data value="Francisco Garrido N&#xba;89"/>
-                              <Data value="Carmina"/>
-                              <Data value="Alguna parte de Sevilla"/>
-                              <Data value="Bormujos"/>
-                              <Data value="sfessefs"/>
-                              <Data value="null"/>
-                            </Column>
-                            <Column editable="true" title="Email" type="java.lang.Object">
-                              <Data value="andresruizdelgado12@gmail.com"/>
-                              <Data value="yoquese@gmail.com"/>
-                              <Data value="marquitoershulo2001@gmail.com"/>
-                              <Data value="illoooquetemetounapataytedejonuevo@gmail.com"/>
-                              <Data value="sfefs@gmail.com"/>
-                              <Data value="null"/>
-                            </Column>
-                          </Table>
-                        </Property>
-                        <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                          <TableColumnModel selectionModel="0">
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                            <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                              <Title/>
-                              <Editor/>
-                              <Renderer/>
-                            </Column>
-                          </TableColumnModel>
-                        </Property>
-                        <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                          <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                        </Property>
-                      </Properties>
-                    </Component>
-                  </SubComponents>
-                </Container>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JButton" name="BackCT">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -454,6 +506,46 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BackCTMouseClicked"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BackCTActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="java.awt.Label" name="Donaciones">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="24" style="2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="DONACIONES"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="Realizamos">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="36" style="1"/>
+                </Property>
+                <Property name="name" type="java.lang.String" value="" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="REALIZAMOS:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="CompanyName">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Trebuchet MS" size="48" style="3"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Andresa Company"/>
+              </Properties>
+            </Component>
+            <Component class="java.awt.Label" name="ComidasReparto">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Dialog" size="24" style="2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="REPARTO DE COMIDAS"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -746,20 +838,20 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DatosClienteActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="TablaClientes">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Clientes"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TablaClientesActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JButton" name="MenuRestaurante">
           <Properties>
             <Property name="text" type="java.lang.String" value="Menu del dia"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuRestauranteActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="EmpresaButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Empresa"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmpresaButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

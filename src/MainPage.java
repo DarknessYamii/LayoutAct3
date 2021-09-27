@@ -38,7 +38,6 @@ public class MainPage extends javax.swing.JFrame {
         UserInformation = new javax.swing.JDialog();
         BackgroundUI = new javax.swing.JPanel();
         BotonUI = new javax.swing.JPanel();
-        BackUI = new javax.swing.JButton();
         DatosUI = new javax.swing.JPanel();
         NombreUI = new javax.swing.JLabel();
         TextNombreUI = new java.awt.TextField();
@@ -48,12 +47,17 @@ public class MainPage extends javax.swing.JFrame {
         TextDireccionUI = new java.awt.TextField();
         EmailUI = new javax.swing.JLabel();
         TextEmaiUI = new java.awt.TextField();
-        ClienteTabla = new javax.swing.JDialog();
-        BackgroundCT = new javax.swing.JPanel();
         TablaFull = new javax.swing.JPanel();
+        BackUI = new javax.swing.JButton();
         ScrollTableCT = new javax.swing.JScrollPane();
         TableCT = new javax.swing.JTable();
+        Empresa = new javax.swing.JDialog();
+        BackgroundCT = new javax.swing.JPanel();
         BackCT = new javax.swing.JButton();
+        Donaciones = new java.awt.Label();
+        Realizamos = new java.awt.Label();
+        CompanyName = new javax.swing.JLabel();
+        ComidasReparto = new java.awt.Label();
         MenuDia = new javax.swing.JDialog();
         BackgroundMD = new javax.swing.JPanel();
         BotonesMD = new javax.swing.JPanel();
@@ -64,8 +68,8 @@ public class MainPage extends javax.swing.JFrame {
         Menu = new javax.swing.JPanel();
         Form = new javax.swing.JButton();
         DatosCliente = new javax.swing.JButton();
-        TablaClientes = new javax.swing.JButton();
         MenuRestaurante = new javax.swing.JButton();
+        EmpresaButton = new javax.swing.JButton();
 
         FormDialog.setAlwaysOnTop(true);
 
@@ -170,15 +174,6 @@ public class MainPage extends javax.swing.JFrame {
 
         BotonUI.setBackground(new java.awt.Color(255, 255, 255));
 
-        BackUI.setBackground(new java.awt.Color(204, 255, 255));
-        BackUI.setText("Volver");
-        BackUI.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BackUIMouseClicked(evt);
-            }
-        });
-        BotonUI.add(BackUI);
-
         DatosUI.setBackground(new java.awt.Color(255, 255, 255));
         DatosUI.setLayout(new java.awt.GridLayout(4, 2, 0, 40));
 
@@ -211,43 +206,15 @@ public class MainPage extends javax.swing.JFrame {
         TextEmaiUI.setText("andresruizdelgado12@gmail.com");
         DatosUI.add(TextEmaiUI);
 
-        javax.swing.GroupLayout BackgroundUILayout = new javax.swing.GroupLayout(BackgroundUI);
-        BackgroundUI.setLayout(BackgroundUILayout);
-        BackgroundUILayout.setHorizontalGroup(
-            BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(DatosUI, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(BackgroundUILayout.createSequentialGroup()
-                    .addGap(3, 3, 3)
-                    .addComponent(BotonUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGap(3, 3, 3)))
-        );
-        BackgroundUILayout.setVerticalGroup(
-            BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(BackgroundUILayout.createSequentialGroup()
-                .addComponent(DatosUI, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 49, Short.MAX_VALUE))
-            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundUILayout.createSequentialGroup()
-                    .addContainerGap(259, Short.MAX_VALUE)
-                    .addComponent(BotonUI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-
-        javax.swing.GroupLayout UserInformationLayout = new javax.swing.GroupLayout(UserInformation.getContentPane());
-        UserInformation.getContentPane().setLayout(UserInformationLayout);
-        UserInformationLayout.setHorizontalGroup(
-            UserInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackgroundUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        UserInformationLayout.setVerticalGroup(
-            UserInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackgroundUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        BackgroundCT.setBackground(new java.awt.Color(255, 255, 255));
-
         TablaFull.setLayout(new javax.swing.BoxLayout(TablaFull, javax.swing.BoxLayout.Y_AXIS));
+
+        BackUI.setBackground(new java.awt.Color(204, 255, 255));
+        BackUI.setText("Volver");
+        BackUI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackUIMouseClicked(evt);
+            }
+        });
 
         TableCT.setBackground(new java.awt.Color(204, 255, 255));
         TableCT.setModel(new javax.swing.table.DefaultTableModel(
@@ -265,7 +232,65 @@ public class MainPage extends javax.swing.JFrame {
         ));
         ScrollTableCT.setViewportView(TableCT);
 
-        TablaFull.add(ScrollTableCT);
+        javax.swing.GroupLayout BackgroundUILayout = new javax.swing.GroupLayout(BackgroundUI);
+        BackgroundUI.setLayout(BackgroundUILayout);
+        BackgroundUILayout.setHorizontalGroup(
+            BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundUILayout.createSequentialGroup()
+                .addComponent(DatosUI, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ScrollTableCT, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+            .addGroup(BackgroundUILayout.createSequentialGroup()
+                .addGap(364, 364, 364)
+                .addComponent(BackUI)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundUILayout.createSequentialGroup()
+                    .addGap(3, 3, 3)
+                    .addComponent(BotonUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(3, 3, 3)))
+            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundUILayout.createSequentialGroup()
+                    .addGap(468, 468, 468)
+                    .addComponent(TablaFull, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        BackgroundUILayout.setVerticalGroup(
+            BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundUILayout.createSequentialGroup()
+                .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(DatosUI, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ScrollTableCT, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(BackUI)
+                .addGap(18, 18, 18))
+            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, BackgroundUILayout.createSequentialGroup()
+                    .addContainerGap(259, Short.MAX_VALUE)
+                    .addComponent(BotonUI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+            .addGroup(BackgroundUILayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundUILayout.createSequentialGroup()
+                    .addGap(79, 79, 79)
+                    .addComponent(TablaFull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(337, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout UserInformationLayout = new javax.swing.GroupLayout(UserInformation.getContentPane());
+        UserInformation.getContentPane().setLayout(UserInformationLayout);
+        UserInformationLayout.setHorizontalGroup(
+            UserInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BackgroundUI, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        UserInformationLayout.setVerticalGroup(
+            UserInformationLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(UserInformationLayout.createSequentialGroup()
+                .addComponent(BackgroundUI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 26, Short.MAX_VALUE))
+        );
+
+        BackgroundCT.setBackground(new java.awt.Color(255, 255, 255));
 
         BackCT.setBackground(new java.awt.Color(204, 255, 255));
         BackCT.setText("Atras");
@@ -280,6 +305,22 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
 
+        Donaciones.setFont(new java.awt.Font("Dialog", 2, 24)); // NOI18N
+        Donaciones.setText("DONACIONES");
+
+        Realizamos.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        Realizamos.setName(""); // NOI18N
+        Realizamos.setText("REALIZAMOS:");
+
+        CompanyName.setBackground(new java.awt.Color(255, 255, 255));
+        CompanyName.setFont(new java.awt.Font("Trebuchet MS", 3, 48)); // NOI18N
+        CompanyName.setForeground(new java.awt.Color(0, 0, 0));
+        CompanyName.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        CompanyName.setText("Andresa Company");
+
+        ComidasReparto.setFont(new java.awt.Font("Dialog", 2, 24)); // NOI18N
+        ComidasReparto.setText("REPARTO DE COMIDAS");
+
         javax.swing.GroupLayout BackgroundCTLayout = new javax.swing.GroupLayout(BackgroundCT);
         BackgroundCT.setLayout(BackgroundCTLayout);
         BackgroundCTLayout.setHorizontalGroup(
@@ -287,32 +328,51 @@ public class MainPage extends javax.swing.JFrame {
             .addGroup(BackgroundCTLayout.createSequentialGroup()
                 .addGroup(BackgroundCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(BackgroundCTLayout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(TablaFull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(76, 76, 76)
+                        .addComponent(CompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(BackgroundCTLayout.createSequentialGroup()
-                        .addGap(271, 271, 271)
-                        .addComponent(BackCT)))
-                .addContainerGap(87, Short.MAX_VALUE))
+                        .addGap(209, 209, 209)
+                        .addComponent(Realizamos, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundCTLayout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(Donaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(117, 117, 117)
+                        .addComponent(ComidasReparto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(BackgroundCTLayout.createSequentialGroup()
+                .addGap(224, 224, 224)
+                .addComponent(BackCT, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         BackgroundCTLayout.setVerticalGroup(
             BackgroundCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BackgroundCTLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(TablaFull, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BackCT)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addGap(37, 37, 37)
+                .addComponent(CompanyName, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(Realizamos, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(BackgroundCTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundCTLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(ComidasReparto, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45))
+                    .addGroup(BackgroundCTLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(Donaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)))
+                .addComponent(BackCT, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90))
         );
 
-        javax.swing.GroupLayout ClienteTablaLayout = new javax.swing.GroupLayout(ClienteTabla.getContentPane());
-        ClienteTabla.getContentPane().setLayout(ClienteTablaLayout);
-        ClienteTablaLayout.setHorizontalGroup(
-            ClienteTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout EmpresaLayout = new javax.swing.GroupLayout(Empresa.getContentPane());
+        Empresa.getContentPane().setLayout(EmpresaLayout);
+        EmpresaLayout.setHorizontalGroup(
+            EmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(BackgroundCT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
-        ClienteTablaLayout.setVerticalGroup(
-            ClienteTablaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(BackgroundCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        EmpresaLayout.setVerticalGroup(
+            EmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(BackgroundCT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         BackgroundMD.setBackground(new java.awt.Color(255, 255, 255));
@@ -425,14 +485,6 @@ public class MainPage extends javax.swing.JFrame {
         });
         Menu.add(DatosCliente);
 
-        TablaClientes.setText("Clientes");
-        TablaClientes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TablaClientesActionPerformed(evt);
-            }
-        });
-        Menu.add(TablaClientes);
-
         MenuRestaurante.setText("Menu del dia");
         MenuRestaurante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,6 +492,14 @@ public class MainPage extends javax.swing.JFrame {
             }
         });
         Menu.add(MenuRestaurante);
+
+        EmpresaButton.setText("Empresa");
+        EmpresaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmpresaButtonActionPerformed(evt);
+            }
+        });
+        Menu.add(EmpresaButton);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -464,7 +524,7 @@ public class MainPage extends javax.swing.JFrame {
 
     private void DatosClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DatosClienteActionPerformed
         UserInformation.setVisible(true);
-        UserInformation.setSize(500, 350);
+        UserInformation.setSize(900, 450);
         dispose();
     }//GEN-LAST:event_DatosClienteActionPerformed
 
@@ -490,17 +550,17 @@ public class MainPage extends javax.swing.JFrame {
        
     }//GEN-LAST:event_TextNombreUIActionPerformed
 
-    private void TablaClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TablaClientesActionPerformed
-        ClienteTabla.setVisible(true);
-        ClienteTabla.setSize(642,526);
+    private void EmpresaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmpresaButtonActionPerformed
+        Empresa.setVisible(true);
+        Empresa.setSize(642,526);
         dispose();
-    }//GEN-LAST:event_TablaClientesActionPerformed
+    }//GEN-LAST:event_EmpresaButtonActionPerformed
 
     private void BackCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackCTMouseClicked
         MainPage mp = new MainPage();
         mp.setVisible(true);
         dispose();
-        ClienteTabla.setVisible(false);
+        Empresa.setVisible(false);
     }//GEN-LAST:event_BackCTMouseClicked
 
     private void BackCTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackCTActionPerformed
@@ -576,11 +636,15 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JPanel BotonUI;
     private javax.swing.JPanel BotonesMD;
     private javax.swing.JPanel ButtonsFM;
-    private javax.swing.JDialog ClienteTabla;
+    private java.awt.Label ComidasReparto;
+    private javax.swing.JLabel CompanyName;
     private javax.swing.JButton DatosCliente;
     private javax.swing.JPanel DatosUI;
     private javax.swing.JLabel DireccionUI;
+    private java.awt.Label Donaciones;
     private javax.swing.JLabel EmailUI;
+    private javax.swing.JDialog Empresa;
+    private javax.swing.JButton EmpresaButton;
     private javax.swing.JButton Form;
     private javax.swing.JDialog FormDialog;
     private javax.swing.JPanel FormTexts;
@@ -590,9 +654,9 @@ public class MainPage extends javax.swing.JFrame {
     private javax.swing.JLabel NombreUI;
     private javax.swing.JLabel PassVar;
     private javax.swing.JPasswordField PasswordCliente;
+    private java.awt.Label Realizamos;
     private javax.swing.JScrollPane ScrollTableCT;
     private javax.swing.JPanel Tabla;
-    private javax.swing.JButton TablaClientes;
     private javax.swing.JPanel TablaFull;
     private javax.swing.JTable TablaMD;
     private javax.swing.JTable TableCT;
